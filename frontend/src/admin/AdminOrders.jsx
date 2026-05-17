@@ -13,7 +13,7 @@ const AdminOrders = () => {
 
   const fetchOrders = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/orders/all', {
+      const res = await axios.get('https://fonfinder-backend.onrender.com/api/orders/all', {
         headers: { Authorization: `Bearer ${token}` }
       })
       setOrders(res.data)
@@ -26,7 +26,7 @@ const AdminOrders = () => {
   const updateStatus = async (id, status) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/orders/${id}/status`,
+        `https://fonfinder-backend.onrender.com/api/orders/${id}/status`,
         { status },
         { headers: { Authorization: `Bearer ${token}` } }
       )

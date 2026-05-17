@@ -21,8 +21,8 @@ const AdminDashboard = () => {
   const fetchStats = async () => {
     try {
       const [productsRes, ordersRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/products'),
-        axios.get('http://localhost:5000/api/orders/all', {
+        axios.get('https://fonfinder-backend.onrender.com/api/products'),
+        axios.get('https://fonfinder-backend.onrender.com/api/orders/all', {
           headers: { Authorization: `Bearer ${token}` }
         })
       ])

@@ -37,8 +37,8 @@ const Shop = () => {
     setLoading(true)
     try {
       const url = selectedCategory
-        ? `http://localhost:5000/api/products?category=${selectedCategory}`
-        : 'http://localhost:5000/api/products'
+        ? `https://fonfinder-backend.onrender.com/api/products?category=${selectedCategory}`
+        : 'https://fonfinder-backend.onrender.com/api/products'
       const res = await axios.get(url)
       setProducts(res.data)
     } catch (err) {
@@ -109,7 +109,7 @@ const Shop = () => {
               <div className="product-image">
                 {product.image ? (
                   <img
-                    src={`http://localhost:5000${product.image}`}
+                    src={`https://fonfinder-backend.onrender.com${product.image}`}
                     alt={product.name}
                   />
                 ) : (

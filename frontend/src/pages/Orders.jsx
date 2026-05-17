@@ -16,7 +16,7 @@ const Orders = () => {
 
   const fetchOrders = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/orders/myorders', {
+      const res = await axios.get('https://fonfinder-backend.onrender.com/api/orders/myorders', {
         headers: { Authorization: `Bearer ${token}` }
       })
       setOrders(res.data)
@@ -102,7 +102,7 @@ const Orders = () => {
                     <div key={i} className="order-item">
                       <div className="order-item-image">
                         {item.image
-                          ? <img src={`http://localhost:5000${item.image}`} alt={item.name} />
+                          ? <img src={`https://fonfinder-backend.onrender.com${item.image}`} alt={item.name} />
                           : <span>📱</span>
                         }
                       </div>

@@ -25,7 +25,7 @@ const Cart = () => {
     setOrdering(true)
     try {
       await axios.post(
-        'http://localhost:5000/api/orders',
+        'https://fonfinder-backend.onrender.com/api/orders',
         {
           items: cartItems.map(item => ({
             product: item._id,
@@ -87,7 +87,7 @@ const Cart = () => {
             <div key={item._id} className="cart-item">
               <div className="cart-item-image">
                 {item.image
-                  ? <img src={`http://localhost:5000${item.image}`} alt={item.name} />
+                  ? <img src={`https://fonfinder-backend.onrender.com${item.image}`} alt={item.name} />
                   : <span>📱</span>
                 }
               </div>

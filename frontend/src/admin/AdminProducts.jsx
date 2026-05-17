@@ -21,7 +21,7 @@ const AdminProducts = () => {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/products')
+      const res = await axios.get('https://fonfinder-backend.onrender.com/api/products')
       setProducts(res.data)
     } catch (err) {
       console.error(err)
@@ -41,7 +41,7 @@ const AdminProducts = () => {
       data.append('stock', formData.stock)
       if (image) data.append('image', image)
 
-      await axios.post('http://localhost:5000/api/products', data, {
+      await axios.post('https://fonfinder-backend.onrender.com/api/products', data, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'
@@ -63,7 +63,7 @@ const AdminProducts = () => {
   const handleDelete = async (id) => {
     if (!window.confirm('Delete this product?')) return
     try {
-      await axios.delete(`http://localhost:5000/api/products/${id}`, {
+      await axios.delete(`https://fonfinder-backend.onrender.com/api/products/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       })
       setProducts(products.filter(p => p._id !== id))
@@ -188,7 +188,7 @@ const AdminProducts = () => {
                   <td>
                     <div className="table-image">
                       {product.image
-                        ? <img src={`http://localhost:5000${product.image}`} alt={product.name} />
+                        ? <img src={`https://fonfinder-backend.onrender.com${product.image}`} alt={product.name} />
                         : <span>📱</span>
                       }
                     </div>
